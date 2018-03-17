@@ -1,4 +1,2 @@
-<div class="jumbotron">
-  <marquee><h1 class="text-center">{{ title }}</h1></marquee>
-</div>
-<img class="img-fluid mx-auto d-block" alt="" src="/assets/img/images2.jpg"/>
+<app-cabecalho titulo="CaelumPic"></app-cabecalho>
+<foto *ngFor="let foto of fotos" url={{foto.url}} descricao="{{ foto.descricao }}"></foto>

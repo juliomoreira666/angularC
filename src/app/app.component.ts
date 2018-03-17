@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CaelumPic';
+
+  fotos = [
+    {url: '/assets/img/images2.jpg', descricao:'Vazia por que sim'},
+    {url: '/assets/img/images2.jpg', descricao:'Vazia por que sim'},
+    {url: '/assets/img/images2.jpg', descricao:'Vazia por que sim'}
+  ]
 }
