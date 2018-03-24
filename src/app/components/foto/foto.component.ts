@@ -1,10 +1,11 @@
-import{Component, Input} from '@angular/core'
+import { Component, Input } from '@angular/core'
 
-@Component ({
- selector: 'foto',
- templateUrl: './foto.component.html'
+@Component({
+  selector: 'foto',
+  templateUrl: './foto.component.html'
 })
 export class FotoComponent {
-  @Input() url
-  @Input() descricao
+  @Input() url: string
+  @Input() titulo: string
+  @Input() descricao: string
 }
