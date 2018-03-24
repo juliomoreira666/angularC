@@ -9,6 +9,7 @@ import { ListagemComponent } from './pages/listagem/listagem.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { roteamento } from './roteamento';
 import { Page404Component } from './pages/page404/page404.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { Page404Component } from './pages/page404/page404.component';
     FotoModule,
     CardModule,
     CabecalhoModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
