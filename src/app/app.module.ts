@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule } from '@angular/common/http'
-
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import {FotoModule}  from './components/foto/foto.module';
+import { FotoModule } from './components/foto/foto.module';
 import { CabecalhoModule } from './components/cabecalho/cabecalho.module';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
