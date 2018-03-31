@@ -22,6 +22,9 @@
     <app-card class="col-sm-4 col-xs-12" *ngFor="let foto of fotos | filtraPorTitulo: inputDaBusca.value" descricao="{{ foto.descricao }}"
       titulo="{{ foto.titulo }}">
       <foto url="{{ foto.url }}" descricao="{{ foto.descricao }}"></foto>
+      <button type="button" class="btn btn-danger" (click)="removerFotos(foto._id)">
+        Remover
+      </button>
     </app-card>
   </div>
 </div>
