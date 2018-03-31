@@ -9,7 +9,7 @@ import { ListagemComponent } from './pages/listagem/listagem.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { roteamento } from './roteamento';
 import { Page404Component } from './pages/page404/page404.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FotoService } from './service/foto.service';
 
 @NgModule({
@@ -26,6 +26,7 @@ import { FotoService } from './service/foto.service';
     CardModule,
     CabecalhoModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [

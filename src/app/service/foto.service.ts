@@ -8,17 +8,19 @@ import { FotoComponent } from "../components/foto/foto.component";
 export class FotoService {
     constructor(private httpClient: HttpClient) {}
 
+    URL: string = 'http://localhost:3000/v1/fotos'
+
     lista(): Observable<Object> {
         return this
         .httpClient
-        .get('http://localhost:3000/v1/fotos', {observe: 'response'})
+        .get(this.URL, {observe: 'response'})
     }
 
     cadastra(foto: FotoComponent) {
         const cabecalho = new HttpHeaders({
             'Content-Type': 'application/json'
           })
-        return this.httpClient.post('http://localhost:3000/v1/fotos',
+        return this.httpClient.post(this.URL,
         JSON.stringify(foto),
         {
           headers: cabecalho
@@ -26,6 +28,18 @@ export class FotoService {
 
     }
     deletar(idDaFoto: string): Observable<Object> {
-        return this.httpClient.delete(`http://localhost:3000/v1/fotos/${idDaFoto}`, {observe: 'response'})
+        return this.httpClient.delete(`${this.URL}/${idDaFoto}`, {observe: 'response'})
     }
+    pegaUmaFotoPorID(id: string): Observable<Object> {
+        return this.httpClient.get(`${this.URL}/${id}`, {observe : 'response'})
+    }
+    alterar(id: string, foto: FotoComponent): Observable<Object> {
+        const cabecalho = new HttpHeaders({
+            'Content-Type': 'application/json'
+          })
+        return this.httpClient.put(`${this.URL}/${id}`, JSON.stringify(foto), {
+            headers: cabecalho
+        })
+    }
+   
 }

@@ -1,18 +1,28 @@
-<form (submit)="cadastraFoto($event)">
+<form (submit)="cadastraFoto($event)" [formGroup]="formCadastro">
   <div class="form-group">
     <label for="url">URL</label>
-    <input [(ngModel)]="foto.url" type="text" name="url" class="form-control" id="url" placeholder="Não digite varios nada">
+    <input  
+            formControlName="url"
+            [(ngModel)]="foto.url" 
+            type="text" name="url" 
+            class="form-control" 
+            id="url" 
+            placeholder="Não digite varios nada"
+            >
+  </div>
+  <div class="alert alert-danger" *ngIf="formCadastro.controls.url.invalid">
+    <strong>Preencha corretamente!</strong>
   </div>
   <div class="form-group">
     <label for="titulo">Titulo</label>
-    <input [(ngModel)]="foto.titulo" type="text" name="titulo" class="form-control" id="titulo" placeholder="Não digite varios nada">
+    <input formControlName="titulo" [(ngModel)]="foto.titulo" type="text" name="titulo" class="form-control" id="titulo" placeholder="Não digite varios nada">
   </div>
   <div class="form-group">
     <label for="descricao">Descricao</label>
-    <textarea [(ngModel)]="foto.descricao" name="descricao" class="form-control" id="descricao" placeholder="Não digite varios nada">
+    <textarea formControlName="descricao" [(ngModel)]="foto.descricao" name="descricao" class="form-control" id="descricao" placeholder="Não digite varios nada">
       </textarea>
   </div>
-  <button type="submit" class="btn btn-success">
+  <button [disabled]="formCadastro.invalid" type="submit" class="btn btn-success">
     Cadastrar fotinhas!
   </button>
   <a [routerLink]="['/']">Voltar</a>

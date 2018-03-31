@@ -21,7 +21,9 @@
   <div class="row">
     <app-card class="col-sm-4 col-xs-12" *ngFor="let foto of fotos | filtraPorTitulo: inputDaBusca.value" descricao="{{ foto.descricao }}"
       titulo="{{ foto.titulo }}">
+      <a [routerLink]="['/cadastro', foto._id]">
       <foto url="{{ foto.url }}" descricao="{{ foto.descricao }}"></foto>
+    </a>
       <button type="button" class="btn btn-danger" (click)="removerFotos(foto._id)">
         Remover
       </button>

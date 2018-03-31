@@ -25,14 +25,18 @@ fotos: FotoComponent[] = []
   }
   removerFotos(idDaFotoRemovida) {
     console.log('TEste', idDaFotoRemovida);
-
     const fotosAtualizadas = this.fotos.filter((foto)=> {
       if (foto._id === idDaFotoRemovida) {
         return false;
       }
       return true
     })
+    
     this.fotos = fotosAtualizadas
+
+    this.fotoService.deletar(idDaFotoRemovida).subscribe((resposta) => {
+      console.log(resposta)
+    })
   }
 }
 
